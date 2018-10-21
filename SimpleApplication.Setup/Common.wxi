@@ -3,7 +3,7 @@
 <Include>
   <?define Manufacturer = "Volodymyr Shkolka" ?>
   <?define ProductName = "Test Application" ?>
-  <?define ProductVersion = "1.0.0.0" ?>
+  <?define ProductVersion = "!(bind.FileVersion.SimpleApplication.exe)" ?>
   <?define ProductSourceFolder = ".\" ?>
 
   <?if $(var.Configuration) = Debug ?>
