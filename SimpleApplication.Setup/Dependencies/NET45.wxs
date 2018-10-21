@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <?include .\..\Common.wxi ?>
+  
+  <Fragment>
+
+    <!-- Detect that .NET framework 4.5 is installed -->
+    <PropertyRef Id="NETFRAMEWORK45" />
+
+    <Condition
+      Message="[ProductName] requires .NET Framework 4.5. Please install the .NET Framework then run this installer again.">
+      <![CDATA[Installed OR NETFRAMEWORK45]]>
+    </Condition>
+
+    <ComponentGroup Id="NET45_Dependency" />
+    
+  </Fragment>
+</Wix>

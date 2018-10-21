@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  
+  <?include .\..\Common.wxi ?>
+
+  <?define VCPP2013MinimumVersion = "12.0.21005" ?>
+  
+  <?if $(var.Platform) = x64 ?>
+    <?define VCPP2013UpgradeCode = "3868550C-1532-316A-9EFF-8509A6E92F79" ?>
+  <?else ?>
+    <?define VCPP2013UpgradeCode = "936E696B-0C8D-3A48-98DF-344FEA4E1139" ?>
+  <?endif ?>
+  
+  <Fragment>
+
+    <Upgrade Id='$(var.VCPP2013UpgradeCode)' >
+      <UpgradeVersion OnlyDetect='yes' Minimum='$(var.VCPP2013MinimumVersion)' Property='HASVCPP2013' />
+    </Upgrade>
+
+    <Condition Message="[ProductName] requires Microsoft Visual C++ 2013 Redistributable Package ($(var.Platform))">
+      <![CDATA[Installed OR HASVCPP2013]]>
+    </Condition>
+
+    <ComponentGroup Id="redist_vc120_Dependency" />
+    
+  </Fragment>
+</Wix>
