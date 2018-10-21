@@ -11,7 +11,7 @@ namespace SimpleApplication
         static void Main(string[] args)
         {
             Console.WriteLine("42");
-            ss
+            ssd
         }
     }
 }
