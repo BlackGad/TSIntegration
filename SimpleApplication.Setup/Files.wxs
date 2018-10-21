@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <?include Common.wxi ?>
+  <Fragment>
+
+    <ComponentGroup Id="Files" Directory="INSTALLLOCATION">
+      <Component Id="ProjectFiles" Guid="0BDEA4B4-A966-4539-8C06-FEED6F35C1F4" Win64="$(var.Win64)">
+        <File Source="$(var.SourceFolder)SimpleApplication.exe" />
+        <File Source="$(var.SourceFolder)SimpleApplication.exe.config" />
+        <?if $(var.Configuration) = Debug ?>
+        <File Source="$(var.SourceFolder)SimpleApplication.pdb" />
+        <?endif ?>
+      </Component>
+
+    </ComponentGroup>
+  </Fragment>
+
+</Wix>

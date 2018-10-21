@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == ''">x64</Platform>
+    <ProductVersion>3.8</ProductVersion>
+    <ProjectGuid>fb19afb1-4ced-4678-958f-510ea518fe4e</ProjectGuid>
+    <SchemaVersion>2.0</SchemaVersion>
+    <OutputName>SimpleApplication.Setup</OutputName>
+    <OutputType>Package</OutputType>
+    <WixTargetsPath Condition=" '$(WixTargetsPath)' == '' AND '$(MSBuildExtensionsPath32)' != '' ">$(MSBuildExtensionsPath32)\Microsoft\WiX\v3.x\Wix.targets</WixTargetsPath>
+    <WixTargetsPath Condition=" '$(WixTargetsPath)' == '' ">$(MSBuildExtensionsPath)\Microsoft\WiX\v3.x\Wix.targets</WixTargetsPath>
+    <IntermediateOutputPath>obj\SimpleApplication.Setup.$(Configuration).$(Platform)\</IntermediateOutputPath>
+    <Name>SimpleApplication.Setup</Name>
+    <OutputPath>bin\SimpleApplication.Setup.$(Configuration).$(Platform)\</OutputPath>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x64' ">
+    <WixVariables>
+    </WixVariables>
+    <DefineConstants>
+    </DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <WixVariables>
+    </WixVariables>
+    <DefineConstants>
+    </DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x64' ">
+    <WixVariables>
+    </WixVariables>
+    <DefineConstants>
+    </DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <WixVariables>
+    </WixVariables>
+    <DefineConstants>
+    </DefineConstants>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Include="Bitmaps\bannrbmp.bmp" />
+    <Content Include="Bitmaps\dlgbmp.bmp" />
+    <Content Include="Common.wxi" />
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Dependencies\redist_vc100.wxs" />
+    <Compile Include="Dependencies\redist_vc110.wxs" />
+    <Compile Include="Dependencies\redist_vc120.wxs" />
+    <Compile Include="Dependencies\redist_vc140.wxs" />
+    <Compile Include="Dependencies\NET40.wxs" />
+    <Compile Include="Dependencies\NET45.wxs" />
+    <Compile Include="Dependencies\NET461.wxs" />
+    <Compile Include="Files.wxs" />
+    <Compile Include="Library.wxs" />
+  </ItemGroup>
+  <ItemGroup>
+    <WixExtension Include="WixUtilExtension">
+      <HintPath>$(WixExtDir)\WixUtilExtension.dll</HintPath>
+      <Name>WixUtilExtension</Name>
+    </WixExtension>
+    <WixExtension Include="WixUIExtension">
+      <HintPath>$(WixExtDir)\WixUIExtension.dll</HintPath>
+      <Name>WixUIExtension</Name>
+    </WixExtension>
+    <WixExtension Include="WixNetFxExtension">
+      <HintPath>$(WixExtDir)\WixNetFxExtension.dll</HintPath>
+      <Name>WixNetFxExtension</Name>
+    </WixExtension>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Bitmaps\" />
+    <Folder Include="Dependencies\" />
+  </ItemGroup>
+  <Import Project="$(WixTargetsPath)" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+  </Target>
+</Project>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  
+  <?include .\..\Common.wxi ?>
+
+  <?define VCPP2015MinimumVersion = "14.0.23026" ?>
+
+  <?if $(var.Platform) = x64 ?>
+    <?define VCPP2014UpgradeCode = "9B0BAA88-E15F-3A1F-ACC0-B206E9DDF71C" ?>
+  <?else ?>
+    <?define VCPP2014UpgradeCode = "C78B8E51-0C65-377E-85D1-282F689FE505" ?>
+  <?endif ?>
+  
+  <Fragment>
+
+    <Upgrade Id='$(var.VCPP2014UpgradeCode)' >
+      <UpgradeVersion OnlyDetect='yes' Minimum='$(var.VCPP2015MinimumVersion)' Property='HASVCPP2015' />
+    </Upgrade>
+
+    <Condition Message="[ProductName] requires Microsoft Visual C++ 2015 Redistributable Package ($(var.Platform))">
+      <![CDATA[Installed OR HASVCPP2015]]>
+    </Condition>
+
+    <ComponentGroup Id="redist_vc140_Dependency" />
+    
+  </Fragment>
+</Wix>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Include>
+  <?define Manufacturer = "Volodymyr Shkolka" ?>
+  <?define ProductName = "Test Application" ?>
+  <?define ProductVersion = "1.0.0.0" ?>
+  <?define ProductSourceFolder = ".\" ?>
+
+  <?if $(var.Platform) = x64 ?>
+  <?define UpgradeCode = "BF9954F2-4671-48C5-B85E-7DDB37EA6253" ?>
+  <?define bitness = "(64 bit)" ?>
+  <?define Win64 = "yes" ?>
+  <?define PlatformProgramFilesFolder = "ProgramFiles64Folder" ?>
+  <?define PlatformSystemFolder = "System64Folder" ?>
+  <?else ?>
+  <?define UpgradeCode = "043E0D1D-E3E2-42A7-BAA9-39DF1A4EBC77" ?>
+  <?define bitness = "(32 bit)" ?>
+  <?define Win64 = "no" ?>
+  <?define PlatformProgramFilesFolder = "ProgramFilesFolder" ?>
+  <?define PlatformSystemFolder = "SystemFolder" ?>
+  <?endif ?>
+
+  <!--Platform specific builds-->
+  <!--<?define SourceFolder = "$(var.SolutionDir)\SimpleApplication\bin\$(var.Configuration).$(var.Platform)\$(var.ProductSourceFolder)" ?>-->
+  <!--Any CPU-->
+  <?define SourceFolder = "$(var.SolutionDir)\SimpleApplication\bin\$(var.Configuration)\$(var.ProductSourceFolder)" ?>
+
+</Include>
