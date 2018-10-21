@@ -6,6 +6,12 @@
   <?define ProductVersion = "1.0.0.0" ?>
   <?define ProductSourceFolder = ".\" ?>
 
+  <?if $(var.Configuration) = Debug ?>
+  <?define ProductTitle = "$(var.ProductName) (DEBUG)" ?>
+  <?else ?>
+  <?define ProductTitle = "$(var.ProductName)" ?>
+  <?endif ?>
+
   <?if $(var.Platform) = x64 ?>
   <?define UpgradeCode = "BF9954F2-4671-48C5-B85E-7DDB37EA6253" ?>
   <?define bitness = "(64 bit)" ?>

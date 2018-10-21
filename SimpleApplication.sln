@@ -35,8 +35,8 @@ Global
 		{FB19AFB1-4CED-4678-958F-510EA518FE4E}.Debug|Setup x86.ActiveCfg = Debug|x86
 		{FB19AFB1-4CED-4678-958F-510EA518FE4E}.Debug|Setup x86.Build.0 = Debug|x86
 		{FB19AFB1-4CED-4678-958F-510EA518FE4E}.Release|Any CPU.ActiveCfg = Release|x86
-		{FB19AFB1-4CED-4678-958F-510EA518FE4E}.Release|Setup x64.ActiveCfg = Release|x86
-		{FB19AFB1-4CED-4678-958F-510EA518FE4E}.Release|Setup x64.Build.0 = Release|x86
+		{FB19AFB1-4CED-4678-958F-510EA518FE4E}.Release|Setup x64.ActiveCfg = Release|x64
+		{FB19AFB1-4CED-4678-958F-510EA518FE4E}.Release|Setup x64.Build.0 = Release|x64
 		{FB19AFB1-4CED-4678-958F-510EA518FE4E}.Release|Setup x86.ActiveCfg = Release|x86
 		{FB19AFB1-4CED-4678-958F-510EA518FE4E}.Release|Setup x86.Build.0 = Release|x86
 	EndGlobalSection
