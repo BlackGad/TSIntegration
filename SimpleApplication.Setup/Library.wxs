@@ -6,7 +6,7 @@
 
   <?include Common.wxi ?>
 
-  <Product Id="*" Name="$(var.ProductName)" Language="1033" Version="$(var.ProductVersion)"
+  <Product Id="*" Name="$(var.ProductTitle)" Language="1033" Version="$(var.ProductVersion)"
            Manufacturer="$(var.Manufacturer)" UpgradeCode="$(var.UpgradeCode)">
     <Package Description="$(var.ProductName) $(var.bitness) Installer" Manufacturer="$(var.Manufacturer)"
              InstallerVersion="310"
@@ -56,7 +56,6 @@
 
     <Feature Id="ProductFeature" Title="$(var.ProductName) Setup" Level="1">
       <ComponentGroupRef Id="NET461_Dependency" />
-
       <ComponentRef Id="PMDShortcuts" />
       <ComponentGroupRef Id="Files" />
     </Feature>
