@@ -10,7 +10,8 @@ namespace SimpleApplication
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("42");
+            var logic = new SomeReasonableLogic();
+            Console.WriteLine(logic.RequestAnswer());
         }
     }
 }
