@@ -11,7 +11,7 @@ namespace SimpleApplication.Tests.Tests
         public void Successful_Test()
         {
             var logic = new SomeReasonableLogic();
-            Assert.AreEqual(42, logic.RequestAnswer());
+            Assert.AreEqual(43, logic.RequestAnswer());
         }
     }
 }
