@@ -11,7 +11,7 @@ namespace SimpleApplication
         static void Main(string[] args)
         {
             var logic = new SomeReasonableLogic();
-            Console.WriteLine(logic.RequestAnswer()); 1
+            Console.WriteLine(logic.RequestAnswer());
         }
     }
 }
